@@ -1,0 +1,183 @@
+/<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .containter {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(240, 174, 75);
+        }
+
+        .box {
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .head {
+            font-size: 5rem;
+            text-shadow: 5px 0 rgb(104, 238, 246);
+            color: rgb(35, 48, 232);
+            font-family: cursive;
+            margin: 100px;
+        }
+
+        .transpotation {
+            height: 130px;
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid black; */
+        }
+
+        .vehicle {
+            background-size: cover;
+            border: 10px solid red;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: bolder;
+            justify-content: center;
+            color: red;
+        }
+
+        .p {
+            background-image: url("https://m.media-amazon.com/images/I/81iuzNDoAQL.png");
+        }
+
+        .a {
+            background-image: url("https://www.goaid.in/wp-content/uploads/2024/11/Medical-Transportation-Service-in-Thane.webp");
+        }
+
+        .s {
+            background-image: url("https://media.cnn.com/api/v1/images/stellar/prod/disney-adventure-ship.jpg");
+        }
+
+        .c {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRflcYwWJO5LmMRraa_yOhUDSqdpLY0ugWMzw&s");
+        }
+
+        .b {
+            background-image: url("https://www.patoys.in/cdn/shop/files/PATOYS-Licensed-Power-Puff-Girls-Electric-Bike-for-Kids-3-8-Years-12V-Battery-LED-Lights-Hand-Accelerator-Metallic-Pink-PATOYS-42763695194430.jpg?v=1745134673");
+        }
+
+        .t {
+            background-image: url("https://images.unsplash.com/photo-1543967625-f24827a5fdb8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b2xkJTIwdHJhaW58ZW58MHx8MHx8fDA%3D");
+        }
+
+        .h {
+            background-image: url("https://media.istockphoto.com/id/136333472/photo/bell-helicopter.jpg?s=612x612&w=0&k=20&c=Dvu7hM7cXuorvtynhOg2132qJFq6jrb89nApTPxpChQ=");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containter">
+        <div class="box">
+            <a class="head">The Vehicles Sound</a>
+        </div>
+        <div class="row transpotation">
+            <button class="p vehicle col-xl-1 col-sm-4 col-6">P</button>
+            <button class="a vehicle col-xl-1 col-sm-4 col-6">A</button>
+            <button class="s vehicle col-xl-1 col-sm-3 col-6">S</button>
+            <button class="c vehicle col-xl-1 col-sm-4 col-6">C</button>
+            <button class="b vehicle col-xl-1 col-sm-4 col-6">B</button>
+            <button class="t vehicle col-xl-1 col-sm-3 col-6">T</button>
+            <button class="h vehicle col-xl-1 col-sm-12 col-6">H</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+
+        </script>
+
+        <script>
+            
+            const btn = document.querySelectorAll(".vehicle");
+
+            console.log(btn);
+
+            Array.from(btn).forEach((v) => {
+                v.addEventListener("click", (t) => {
+                    let b = t.target.classList[0];
+
+                    makesound(b);
+                })
+            });
+
+            document.querySelector('body').addEventListener('keydown', (t) => {
+                makesound(t.key);
+            })
+
+            function makesound(b) {
+                switch (b) {
+                    case "p":
+                    case "P":
+                        let p1 = new Audio("./Vehical sounds/aeroplane-327235.mp3")
+                        p1.play();
+                        break;
+
+                    case "a":
+                    case "A":
+                        let p2 = new Audio("./Vehical sounds/Abulancesound.mp3.mp3");
+                        p2.play();
+                        break;
+
+                    case "S":
+                    case "s":
+                        let p3 = new Audio("./Vehical sounds/ship-horn-352063.mp3");
+                        p3.play();
+                        break;
+
+                    case "c":
+                    case "C":
+                        let p4 = new Audio("./Vehical sounds/car-pass-by-337871.mp3");
+                        p4.play();
+                        break;
+
+                    case "b":
+                    case "B":
+                        let p5 = new Audio("./Vehical sounds/Bike_sound.wav");
+                        p5.play();
+                        break;
+
+                    case "T":   
+                    case "t":
+                        let p6 = new Audio("./Vehical sounds/indian-train-sound-from-vestibule-realistic-interior-noise-314562.mp3")
+                        p6.play();
+                        break;
+
+                    case "H":
+                    case "h":
+                        let p7 = new Audio("./Vehical sounds/helicopter-sound-1-372462.mp3");
+                        p7.play();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        </script>
+</body>
+
+</html>
